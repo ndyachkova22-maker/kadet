@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ОГЭ — задания № 6 и № 9 | Интерактивная рабочая тетрадь кадета</title>
+<style>
+:root {
+  --navy:#13253f; --navy2:#1d3557; --gold:#d9a441; --gold2:#f0c96b;
+  --red:#9e2a2b; --cream:#f7f3e9; --ink:#1d2430; --muted:#657184;
+  --line:#d8dde5; --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#dfe5ec;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit}
+.page{width:210mm;min-height:297mm;margin:10mm auto;background:var(--white);position:relative;
+      padding:16mm 16mm 14mm;box-shadow:0 5px 24px rgba(15,30,50,.15);overflow:hidden}
+@media print{
+  body{background:#fff}
+  .page{margin:0;box-shadow:none;break-after:page;page-break-after:always}
+  .page:last-child{break-after:auto;page-break-after:auto}
+  button,.answer-row input{display:none!important}
+  .feedback{display:none!important}
+}
+.cover{background:linear-gradient(145deg,var(--navy),#0d1b2a 62%,#223e60);color:white;display:flex;flex-direction:column;justify-content:space-between}
+.cover:before,.cover:after{content:"";position:absolute;border:2px solid rgba(217,164,65,.35);border-radius:50%}
+.cover:before{width:120mm;height:120mm;right:-45mm;top:-30mm}
+.cover:after{width:85mm;height:85mm;left:-45mm;bottom:-25mm}
+.cadet-mark{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.epaulettes{display:flex;gap:5px}
+.epaulettes i{display:block;width:31px;height:12px;background:var(--gold);border-radius:3px;box-shadow:0 0 0 1px rgba(255,255,255,.3)}
+.star{font-size:30px;color:var(--gold2)}
+.cover-main{position:relative;z-index:1;text-align:center}
+.cover-kicker{letter-spacing:.22em;color:var(--gold2);font-size:13px;font-weight:700}
+.cover h1{font-size:35px;line-height:1.08;margin:12px 0 10px;letter-spacing:.02em}
+.cover h1 span{color:var(--gold2)}
+.cover-sub{font-size:18px;max-width:145mm;margin:0 auto;line-height:1.5;color:#e8edf5}
+.badge{display:inline-block;margin-top:22px;padding:10px 18px;border:1px solid var(--gold);border-radius:5px;color:var(--gold2);font-weight:700;letter-spacing:.08em}
+.cover-bottom{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.22);padding-top:10px;display:flex;justify-content:space-between;font-size:11px;color:#c8d1dd}
+.page-head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--navy);padding-bottom:8px}
+.page-head h2{margin:3px 0 0;color:var(--navy);font-size:25px}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:var(--red);font-weight:800}
+.page-number{font-size:11px;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.contents-title{font-size:31px;color:var(--navy);margin:16mm 0 5mm}
+.contents-sub{color:var(--muted);line-height:1.5}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:9mm;margin-top:12mm}
+.menu-card{border:1px solid var(--line);border-top:7px solid var(--navy);padding:8mm;background:linear-gradient(#fff,#f8fafc);text-decoration:none;border-radius:4px}
+.menu-card.gold{border-top-color:var(--gold)}
+.menu-card h3{margin:0 0 4px;font-size:22px;color:var(--navy)}
+.menu-card p{margin:0 0 9px;color:var(--muted);line-height:1.45}
+.menu-card strong{color:var(--red)}
+.rule{height:1px;background:var(--line);margin:12mm 0}
+.protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm}
+.protocol div{padding:5mm;background:var(--cream);border-left:4px solid var(--gold)}
+.protocol b{display:block;color:var(--navy);margin-bottom:3px}
+.mission{margin:6mm 0;padding:4mm 5mm;background:#eef2f6;border-left:5px solid var(--gold);font-size:12px;color:var(--navy)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.exercise{border:1px solid var(--line);min-height:96mm;padding:5mm 5mm 4mm;position:relative;background:#fff}
+.exercise-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8mm}
+.stage{font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--red);padding:5px 8px;border:1px solid #dca4a4;border-radius:3px;background:#fff7f7}
+.mini-tag{font-size:10px;color:var(--muted);font-weight:700}
+.problem{font-family:Georgia,"Times New Roman",serif;font-size:25px;text-align:center;min-height:23mm;display:flex;align-items:center;justify-content:center;line-height:1.5;color:#101722}
+.answer-row{display:grid;grid-template-columns:auto 1fr auto auto;gap:5px;align-items:center;font-size:10px;color:var(--muted)}
+.answer-row input{min-width:0;width:100%;height:29px;border:1px solid #bfc7d2;border-radius:3px;padding:4px 7px;font-size:13px}
+.answer-row input.correct{background:#dff3e6;border-color:#58a978;box-shadow:0 0 0 2px rgba(88,169,120,.14)}
+.answer-row input.incorrect{background:#fde2e8;border-color:#d97a91;box-shadow:0 0 0 2px rgba(217,122,145,.14)}
+button{border:0;border-radius:3px;background:var(--navy);color:#fff;padding:8px 9px;font-size:10px;font-weight:700;cursor:pointer}
+button.ghost{background:#eef2f6;color:var(--navy);border:1px solid #ccd4df}
+.feedback{height:17px;margin-top:5px;font-size:10px;font-weight:700}
+.workline{position:absolute;left:5mm;right:5mm;bottom:5mm;border-bottom:1px dashed #cdd4de}
+.reflection-box{margin-top:6mm;border:1px solid var(--gold);padding:6mm;background:var(--cream)}
+.reflection-title{font-size:14px;font-weight:900;letter-spacing:.12em;color:var(--navy)}
+.reflection-box p{font-size:11px;color:var(--muted)}
+.checks{display:flex;gap:8mm;flex-wrap:wrap;font-size:11px}
+.footer{position:absolute;left:16mm;right:16mm;bottom:7mm;border-top:1px solid var(--line);padding-top:4mm;display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+.footer a{text-decoration:none;color:var(--navy);font-weight:700}
+.answers h2{font-size:29px;color:var(--navy);margin:7mm 0 3mm}
+.answers table{width:100%;border-collapse:collapse;font-size:10px;margin-top:7mm}
+.answers th,.answers td{border:1px solid var(--line);padding:6px 7px;text-align:left}
+.answers th{background:var(--navy);color:white}
+.answers td:nth-child(1){width:8%}
+.answers td:nth-child(3){font-size:13px}
+.task-link{display:inline-block;min-width:28px;padding:5px 8px;border-radius:4px;background:var(--navy);color:#fff!important;text-decoration:none!important;font-weight:900;text-align:center}.task-link:hover{background:var(--red)}
+.answers a{color:var(--red);text-decoration:none;font-weight:700}
+.note{background:#fff8e8;border-left:4px solid var(--gold);padding:5mm;margin-top:7mm;font-size:11px;line-height:1.45}
+@page{size:A4 portrait;margin:0}
+.frac{display:inline-flex;vertical-align:middle;flex-direction:column;align-items:center;line-height:1.0;margin:0 .12em}
+.frac span:first-child{border-bottom:1.5px solid currentColor;padding:0 .12em .05em}
+.frac span:last-child{padding:.05em .12em 0}
+</style>
+<script>
+const answers = ["11/35","25/28","5/39","1/44","3/5","1/2","7/25","2/5","3/10","5/4","1/2","3/5","7/100","4/5","−3/10","−3/2","−9/10","−9/5","13","11","10","12","−27/10","27/4","29/4","7/4","−41/4","−8","−12","−16","−20","−3; 3","−2; 2","−4; 4","−5; 5","0; 6","0; 6","0; 9","0; 6","1/2; 1","4/5; 1","1/4; 1","1/2; 1"];
+function norm(s){
+  return s.toLowerCase().replace(/\s+/g,'').replace(/−/g,'-').replace(/;/g,',');
+}
+function checkAnswer(i){
+  const input=document.getElementById('inp-'+i);
+  const fb=document.getElementById('fb-'+i);
+  if(!input || !fb) return;
+  const given=norm(input.value);
+  const expected=norm(answers[i-1]);
+  input.classList.remove('correct','incorrect');
+  let ok = given===expected;
+  if(!ok && expected.includes(',')){
+    const a=given.split(',').sort().join(',');
+    const b=expected.split(',').sort().join(',');
+    ok=a===b;
+  }
+  input.classList.add(ok ? 'correct' : 'incorrect');
+  fb.textContent = ok ? '✓ Верно. Отличная работа, кадет!' : '✗ Неверно. Проверь вычисления и попробуй ещё раз.';
+  fb.style.color = ok ? '#1d6b45' : '#9e2a2b';
+}
+</script>
+</head>
+<body>
+
+<section class="page cover" id="cover">
+  <div class="cadet-mark">
+    <div class="epaulettes"><i></i><i></i><i></i></div><div class="star">★</div>
+  </div>
+  <div class="cover-main">
+    <div class="cover-kicker">ПОДГОТОВКА К ОГЭ • МАТЕМАТИКА</div>
+    <h1>ИНТЕРАКТИВНАЯ<br><span>РАБОЧАЯ ТЕТРАДЬ</span></h1>
+    <div class="cover-sub">Задания № 6 и № 9<br>Дроби • Уравнения</div>
+    <div class="badge">КАДЕТСКИЙ ТРЕНИРОВОЧНЫЙ КУРС</div>
+  </div>
+  <div class="cover-bottom"><span>Дисциплина. Точность. Результат.</span><span>2026–2027</span></div>
+</section>
+
+<section class="page" id="contents">
+  <header class="page-head"><div><span class="eyebrow">НАВИГАЦИЯ</span><h2>Маршрут подготовки</h2></div><div class="page-number">ЛИСТ 2</div></header>
+  <div class="contents-title">Выбери рубеж</div>
+  <p class="contents-sub">Работай последовательно: сначала разбери приём, затем закрепи его и только после этого переходи к самостоятельному решению.</p>
+  <div class="menu">
+    <a class="menu-card" href="#page-3">
+      <h3>РАЗДЕЛ 1 • ДРОБИ</h3>
+      <p>Задания № 1–3. Выполнение действий с обыкновенными дробями.</p>
+      <strong>Перейти к тренировке →</strong>
+    </a>
+    <a class="menu-card gold" href="#page-6">
+      <h3>РАЗДЕЛ 2 • УРАВНЕНИЯ</h3>
+      <p>Задания № 4–10. Линейные и квадратные уравнения.</p>
+      <strong>Перейти к тренировке →</strong>
+    </a>
+  </div>
+  <div class="rule"></div>
+  <div class="protocol">
+    <div><b>01 • ИЗУЧАЕМ</b>Внимательно разбери алгоритм и ход рассуждений.</div>
+    <div><b>02 • ЗАКРЕПЛЯЕМ</b>Реши похожий пример, не торопясь.</div>
+    <div><b>03 • САМОСТОЯТЕЛЬНО / ДОМА</b>Работай без подсказок и проверь себя.</div>
+  </div>
+  <div class="note"><b>Кадетское правило:</b> ошибка — это не поражение, а сигнал, где нужна дополнительная тренировка. Главная цель — устойчивый навык и точный ответ.</div>
+  <footer class="footer"><a href="#cover">← Титульный лист</a><span>Навигация по рабочей тетради</span><a href="#contents">К разделам →</a></footer>
+</section>
+
+    <section class="page task-page" id="page-3">
+      <header class="page-head">
+        <div><span class="eyebrow">ДРОБИ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 3</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-1">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 1</span>
+          </div>
+          <div class="problem"><span class="frac"><span>3</span><span>5</span></span> − <span class="frac"><span>2</span><span>7</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-1" autocomplete="off" aria-label="Ответ на задание 1">
+            <button onclick="checkAnswer(1)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-1"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-2">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 1</span>
+          </div>
+          <div class="problem"><span class="frac"><span>1</span><span>7</span></span> + <span class="frac"><span>3</span><span>4</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-2" autocomplete="off" aria-label="Ответ на задание 2">
+            <button onclick="checkAnswer(2)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-2"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-3">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 1</span>
+          </div>
+          <div class="problem"><span class="frac"><span>2</span><span>3</span></span> − <span class="frac"><span>7</span><span>13</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-3" autocomplete="off" aria-label="Ответ на задание 3">
+            <button onclick="checkAnswer(3)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-3"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-4">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 1</span>
+          </div>
+          <div class="problem"><span class="frac"><span>3</span><span>4</span></span> − <span class="frac"><span>8</span><span>11</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-4" autocomplete="off" aria-label="Ответ на задание 4">
+            <button onclick="checkAnswer(4)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-4"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-4">
+      <header class="page-head">
+        <div><span class="eyebrow">ДРОБИ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 4</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-5">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 2</span>
+          </div>
+          <div class="problem"><span class="frac"><span>3</span><span>25</span></span> : <span class="frac"><span>3</span><span>15</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-5" autocomplete="off" aria-label="Ответ на задание 5">
+            <button onclick="checkAnswer(5)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-5"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-6">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 2</span>
+          </div>
+          <div class="problem"><span class="frac"><span>2</span><span>17</span></span> : <span class="frac"><span>4</span><span>17</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-6" autocomplete="off" aria-label="Ответ на задание 6">
+            <button onclick="checkAnswer(6)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-6"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-7">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 2</span>
+          </div>
+          <div class="problem"><span class="frac"><span>7</span><span>45</span></span> : <span class="frac"><span>5</span><span>9</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-7" autocomplete="off" aria-label="Ответ на задание 7">
+            <button onclick="checkAnswer(7)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-7"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-8">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 2</span>
+          </div>
+          <div class="problem"><span class="frac"><span>8</span><span>55</span></span> : <span class="frac"><span>4</span><span>11</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-8" autocomplete="off" aria-label="Ответ на задание 8">
+            <button onclick="checkAnswer(8)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-8"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-5">
+      <header class="page-head">
+        <div><span class="eyebrow">ДРОБИ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 5</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-9">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 2</span>
+          </div>
+          <div class="problem"><span class="frac"><span>69</span><span>520</span></span> : <span class="frac"><span>23</span><span>52</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-9" autocomplete="off" aria-label="Ответ на задание 9">
+            <button onclick="checkAnswer(9)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-9"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-10">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 3</span>
+          </div>
+          <div class="problem"><span class="frac"><span>91</span><span>60</span></span> − <span class="frac"><span>4</span><span>15</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-10" autocomplete="off" aria-label="Ответ на задание 10">
+            <button onclick="checkAnswer(10)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-10"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-11">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 3</span>
+          </div>
+          <div class="problem"><span class="frac"><span>23</span><span>34</span></span> − <span class="frac"><span>3</span><span>17</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-11" autocomplete="off" aria-label="Ответ на задание 11">
+            <button onclick="checkAnswer(11)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-11"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-12">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 3</span>
+          </div>
+          <div class="problem"><span class="frac"><span>59</span><span>65</span></span> − <span class="frac"><span>4</span><span>13</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-12" autocomplete="off" aria-label="Ответ на задание 12">
+            <button onclick="checkAnswer(12)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-12"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-6">
+      <header class="page-head">
+        <div><span class="eyebrow">ДРОБИ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 6</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-13">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 3</span>
+          </div>
+          <div class="problem"><span class="frac"><span>121</span><span>300</span></span> − <span class="frac"><span>1</span><span>3</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-13" autocomplete="off" aria-label="Ответ на задание 13">
+            <button onclick="checkAnswer(13)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-13"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-14">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 3</span>
+          </div>
+          <div class="problem"><span class="frac"><span>143</span><span>85</span></span> − <span class="frac"><span>15</span><span>17</span></span></div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-14" autocomplete="off" aria-label="Ответ на задание 14">
+            <button onclick="checkAnswer(14)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-14"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-15">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 4</span>
+          </div>
+          <div class="problem">x + 3 = −9x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-15" autocomplete="off" aria-label="Ответ на задание 15">
+            <button onclick="checkAnswer(15)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-15"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-16">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 4</span>
+          </div>
+          <div class="problem">−8x − 3 = −6x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-16" autocomplete="off" aria-label="Ответ на задание 16">
+            <button onclick="checkAnswer(16)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-16"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-7">
+      <header class="page-head">
+        <div><span class="eyebrow">УРАВНЕНИЯ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 7</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-17">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 4</span>
+          </div>
+          <div class="problem">−4x − 9 = 6x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-17" autocomplete="off" aria-label="Ответ на задание 17">
+            <button onclick="checkAnswer(17)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-17"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-18">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 4</span>
+          </div>
+          <div class="problem">−3x − 9 = 2x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-18" autocomplete="off" aria-label="Ответ на задание 18">
+            <button onclick="checkAnswer(18)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-18"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-19">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 5</span>
+          </div>
+          <div class="problem">7x − 7 = 19 + 5x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-19" autocomplete="off" aria-label="Ответ на задание 19">
+            <button onclick="checkAnswer(19)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-19"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-20">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 5</span>
+          </div>
+          <div class="problem">5x − 5 = 17 + 3x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-20" autocomplete="off" aria-label="Ответ на задание 20">
+            <button onclick="checkAnswer(20)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-20"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-8">
+      <header class="page-head">
+        <div><span class="eyebrow">УРАВНЕНИЯ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 8</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-21">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 5</span>
+          </div>
+          <div class="problem">4x − 4 = 16 + 2x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-21" autocomplete="off" aria-label="Ответ на задание 21">
+            <button onclick="checkAnswer(21)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-21"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-22">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 5</span>
+          </div>
+          <div class="problem">6x − 6 = 18 + 4x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-22" autocomplete="off" aria-label="Ответ на задание 22">
+            <button onclick="checkAnswer(22)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-22"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-23">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 6</span>
+          </div>
+          <div class="problem">10(x + 2) = −7</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-23" autocomplete="off" aria-label="Ответ на задание 23">
+            <button onclick="checkAnswer(23)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-23"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-24">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 6</span>
+          </div>
+          <div class="problem">4(x − 8) = −5</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-24" autocomplete="off" aria-label="Ответ на задание 24">
+            <button onclick="checkAnswer(24)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-24"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-9">
+      <header class="page-head">
+        <div><span class="eyebrow">УРАВНЕНИЯ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 9</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-25">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 6</span>
+          </div>
+          <div class="problem">4(x − 6) = 5</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-25" autocomplete="off" aria-label="Ответ на задание 25">
+            <button onclick="checkAnswer(25)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-25"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-26">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 6</span>
+          </div>
+          <div class="problem">4(x − 2) = −1</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-26" autocomplete="off" aria-label="Ответ на задание 26">
+            <button onclick="checkAnswer(26)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-26"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-27">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 6</span>
+          </div>
+          <div class="problem">4(x + 10) = −1</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-27" autocomplete="off" aria-label="Ответ на задание 27">
+            <button onclick="checkAnswer(27)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-27"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-28">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 7</span>
+          </div>
+          <div class="problem">3(x + 2) − 2(x − 2) = 2</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-28" autocomplete="off" aria-label="Ответ на задание 28">
+            <button onclick="checkAnswer(28)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-28"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-10">
+      <header class="page-head">
+        <div><span class="eyebrow">УРАВНЕНИЯ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 10</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-29">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 7</span>
+          </div>
+          <div class="problem">3(x + 3) − 2(x − 3) = 3</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-29" autocomplete="off" aria-label="Ответ на задание 29">
+            <button onclick="checkAnswer(29)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-29"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-30">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 7</span>
+          </div>
+          <div class="problem">3(x + 4) − 2(x − 4) = 4</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-30" autocomplete="off" aria-label="Ответ на задание 30">
+            <button onclick="checkAnswer(30)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-30"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-31">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 7</span>
+          </div>
+          <div class="problem">3(x + 5) − 2(x − 5) = 5</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-31" autocomplete="off" aria-label="Ответ на задание 31">
+            <button onclick="checkAnswer(31)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-31"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-32">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 8</span>
+          </div>
+          <div class="problem">x² − 9 = 0</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-32" autocomplete="off" aria-label="Ответ на задание 32">
+            <button onclick="checkAnswer(32)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-32"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-11">
+      <header class="page-head">
+        <div><span class="eyebrow">УРАВНЕНИЯ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 11</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-33">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 8</span>
+          </div>
+          <div class="problem">x² − 4 = 0</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-33" autocomplete="off" aria-label="Ответ на задание 33">
+            <button onclick="checkAnswer(33)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-33"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-34">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 8</span>
+          </div>
+          <div class="problem">x² − 16 = 0</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-34" autocomplete="off" aria-label="Ответ на задание 34">
+            <button onclick="checkAnswer(34)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-34"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-35">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 8</span>
+          </div>
+          <div class="problem">x² − 25 = 0</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-35" autocomplete="off" aria-label="Ответ на задание 35">
+            <button onclick="checkAnswer(35)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-35"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-36">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 9</span>
+          </div>
+          <div class="problem">6x² = 36x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-36" autocomplete="off" aria-label="Ответ на задание 36">
+            <button onclick="checkAnswer(36)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-36"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-12">
+      <header class="page-head">
+        <div><span class="eyebrow">УРАВНЕНИЯ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 12</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-37">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 9</span>
+          </div>
+          <div class="problem">7x² = 42x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-37" autocomplete="off" aria-label="Ответ на задание 37">
+            <button onclick="checkAnswer(37)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-37"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-38">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 9</span>
+          </div>
+          <div class="problem">8x² = 72x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-38" autocomplete="off" aria-label="Ответ на задание 38">
+            <button onclick="checkAnswer(38)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-38"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-39">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 9</span>
+          </div>
+          <div class="problem">9x² = 54x</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-39" autocomplete="off" aria-label="Ответ на задание 39">
+            <button onclick="checkAnswer(39)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-39"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-4" id="ex-40">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ ДОМА</span>
+            <span class="mini-tag">Задание № 10</span>
+          </div>
+          <div class="problem">2x² − 3x + 1 = 0</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-40" autocomplete="off" aria-label="Ответ на задание 40">
+            <button onclick="checkAnswer(40)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-40"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+    <section class="page task-page" id="page-13">
+      <header class="page-head">
+        <div><span class="eyebrow">УРАВНЕНИЯ</span><h2>Тренировочный рубеж</h2></div>
+        <div class="page-number">ЛИСТ 13</div>
+      </header>
+      <div class="mission">Миссия кадета: <b>точность → спокойствие → результат</b></div>
+      <div class="grid">
+        
+        <article class="exercise stage-1" id="ex-41">
+          <div class="exercise-top">
+            <span class="stage">ИЗУЧАЕМ</span>
+            <span class="mini-tag">Задание № 10</span>
+          </div>
+          <div class="problem">5x² − 9x + 4 = 0</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-41" autocomplete="off" aria-label="Ответ на задание 41">
+            <button onclick="checkAnswer(41)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-41"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-2" id="ex-42">
+          <div class="exercise-top">
+            <span class="stage">ЗАКРЕПЛЯЕМ</span>
+            <span class="mini-tag">Задание № 10</span>
+          </div>
+          <div class="problem">8x² − 10x + 2 = 0</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-42" autocomplete="off" aria-label="Ответ на задание 42">
+            <button onclick="checkAnswer(42)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-42"></div>
+          <div class="workline"></div>
+        </article>
+        
+        <article class="exercise stage-3" id="ex-43">
+          <div class="exercise-top">
+            <span class="stage">РЕШАЮ САМОСТОЯТЕЛЬНО</span>
+            <span class="mini-tag">Задание № 10</span>
+          </div>
+          <div class="problem">6x² − 9x + 3 = 0</div>
+          <div class="answer-row">
+            <label>Мой ответ:</label>
+            <input id="inp-43" autocomplete="off" aria-label="Ответ на задание 43">
+            <button onclick="checkAnswer(43)">Проверить</button>
+          </div>
+          <div class="feedback" id="fb-43"></div>
+          <div class="workline"></div>
+        </article>
+        
+      </div>
+      
+        <div class="reflection-box">
+          <div class="reflection-title">КАДЕТСКИЙ ФИНИШ</div>
+          <p>Последний шаг выполнен. Отметь, насколько уверенно ты владеешь материалом.</p>
+          <div class="checks">
+            <label><input type="radio" name="level"> ⚡ Уверенно</label>
+            <label><input type="radio" name="level"> ★ Почти уверенно</label>
+            <label><input type="radio" name="level"> ◆ Нужна тренировка</label>
+          </div>
+        </div>
+        
+      <footer class="footer"><a href="#contents">↩ К разделам</a><span>ОГЭ • математика • № 6 и № 9</span><a href="#contents">К разделам →</a></footer>
+    </section>
+    
+<script>
+window.addEventListener('beforeprint',()=>document.querySelectorAll('.feedback').forEach(x=>x.style.display='none'));
+</script>
+</body></html>
